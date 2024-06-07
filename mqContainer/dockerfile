@@ -1,0 +1,13 @@
+FROM icr.io/ibm-messaging/mq:latest
+ENV LICENSE=accept
+ENV MQ_QMGR_NAME=QM1
+ENV MQ_APP_PASSWORD=passw0rd
+ENV MQ_ADMIN_PASSWORD=passw0rd
+ARG name=IBM_MQ_1
+EXPOSE 1414
+EXPOSE 9443
+ARG detach
+
+COPY --chmod=777 startup.sh /startup.sh
+
+ENTRYPOINT [ "/startup.sh" ]

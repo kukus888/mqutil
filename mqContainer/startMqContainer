@@ -1,0 +1,8 @@
+#!/bin/bash
+
+docker build -t ibmmq-test .
+
+docker start ibmmq-test
+#docker run -d --name ibmmq-test ibmmq-test /startup.sh
+
+docker exec -i ibmmq-test /startup.sh

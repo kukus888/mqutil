@@ -1,0 +1,8 @@
+ibmmq:
+  connections:
+    connectorType: docker
+    containerName: "ibmmq-test"
+  queueManagers:
+    - qmName: QM1
+      checkInterval: 10s
+      retryTimes: 5
