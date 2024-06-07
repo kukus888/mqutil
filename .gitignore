@@ -3,3 +3,12 @@ __debug*
 *.log
 go.sum
 profile.cpu
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+go.work
+go.work.sum
