@@ -3,6 +3,8 @@
 docker build -t ibmmq-test .
 
 docker start ibmmq-test
-#docker run -d --name ibmmq-test ibmmq-test /startup.sh
+if [[ $? -ne 0 ]]; then
+    docker run -d --name ibmmq-test ibmmq-test /startup.sh
+fi
 
 docker exec -i ibmmq-test /startup.sh
