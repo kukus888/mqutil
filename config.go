@@ -54,8 +54,7 @@ func (cfg *AppConfiguration) LoadConfiguration(cfgPath string) {
 	for qmgr := range cfg.IbmMq.QueueManagers {
 		var qm = &cfg.IbmMq.QueueManagers[qmgr]
 		if qm.MaxRetryTimes == 0 {
-			slog.Warn("Warning! QueueManager '" + qm.QmName + "' does not have set retryTimes! (default=" + fmt.Sprint(defaultMaxRetryTimes) + ")")
-			qm.MaxRetryTimes = defaultMaxRetryTimes
+			slog.Warn("Warning! QueueManager '" + qm.QmName + "' does not have set retryTimes! (default=" + fmt.Sprint(defaultMaxRetryTimes) + ") Leaving unset.")
 		}
 		if qm.CheckInterval == 0 {
 			slog.Warn("Warning! QueueManager '" + qm.QmName + "' does not have set checkInterval! (default=" + defaultCheckInterval.String() + ")")
